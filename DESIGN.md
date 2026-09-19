@@ -75,7 +75,9 @@ l'utilisateur regarde. **Durées sous 300ms** pour tout UI.
 - **Lignes d'archive** : au survol, fond + `translateX(2px)`. Discret, ça
   indique la cliquabilité sans bouger tout le tableau.
 - **Entrée en scène** : `rise-in` — `translateY(10px)` + opacity, **jamais
-  `scale(0)`** (rien n'apparaît de nulle part dans le monde réel).
+  `scale(0)`** (rien n'apparaît de nulle part dans le monde réel). En
+  **transitions CSS** (pas de keyframes) : interruptibles et gérées par
+  `@starting-style` pour l'entrée initiale.
 - **Cascade** : `.stagger > *` retarde chaque item de 40→390ms (intervalle
   30-80ms). Rien n'arrive tout à la fois. **Le stagger est décoratif :
   il ne bloque jamais l'interaction.**
