@@ -20,13 +20,13 @@ export default function DigestPage({ params }) {
     <div className="min-h-screen">
       <header className="border-b border-white/10 bg-black/40 backdrop-blur sticky top-0 z-10">
         <div className="max-w-3xl mx-auto px-5 py-4 flex items-center justify-between">
-          <Link href="/" className="text-sm text-white/60 hover:text-white">
+          <Link href="/" className="btn text-sm text-white/60 hover:text-white">
             ← Archive
           </Link>
           <span className="text-xs text-white/40 font-mono">{d.date}</span>
         </div>
       </header>
-      <main className="max-w-3xl mx-auto px-5 py-10">
+      <main className="max-w-3xl mx-auto px-5 py-10 rise-in">
         <DigestView markdown={d.body} />
         <nav className="mt-16 flex justify-between text-sm">
           {prev ? (

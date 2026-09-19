@@ -1,16 +1,224 @@
 @import "tailwindcss";
 
-:root { color-scheme: dark; }
+/* ============================================================
+   SYSTÈME DE DESIGN — veille-tech
+   Inspiré Emil Kowalski (design engineering) : tokens,
+   courbes custom, ressenti premium, rien de plus.
+   ============================================================ */
+
+:root {
+  color-scheme: dark;
+
+  /* — Palette : neutre chaud + accent violet (signal, pas déco) — */
+  --bg:            #09090b;
+  --bg-elevated:   #101013;
+  --surface:       #ffffff08;   /* carte */
+  --surface-hover: #ffffff0f;
+  --border:        #ffffff14;
+  --border-hover:  #ffffff26;
+
+  --fg:            #fafafa;
+  --fg-muted:      #ffffff73;
+  --fg-subtle:     #ffffff45;
+  --fg-faint:      #ffffff2e;
+
+  --accent:        #8b5cf6;     /* violet — lecture, signal */
+  --accent-fg:     #c4b5fd;
+
+  /* — États de fiabilité (badges) — */
+  --ok:            #34d399;
+  --warn:          #fbbf24;
+  --rumor:         #fb7185;
+
+  /* — Courbes (jamais les easings CSS natifs) — */
+  --ease-out:      cubic-bezier(0.23, 1, 0.32, 1);   /* entrées : rapide au départ */
+  --ease-in-out:   cubic-bezier(0.77, 0, 0.175, 1);  /* mouvement à l'écran */
+  --ease-drawer:   cubic-bezier(0.32, 0.72, 0, 1);   /* style iOS */
+
+  /* — Rythme — */
+  --dur-press:     140ms;
+  --dur-hover:     180ms;
+  --dur-card:      220ms;
+  --dur-page:      320ms;
+
+  --radius:        14px;
+  --shadow-card:   0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  --shadow-lift:   0 2px 4px rgba(0,0,0,.5), 0 20px 40px -16px rgba(0,0,0,.7);
+
+  --font-sans:     ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Inter", sans-serif;
+  --font-mono:     ui-monospace, "SF Mono", "JetBrains Mono", monospace;
+}
 
 html { scroll-behavior: smooth; }
 
 body {
-  background: #0a0a0c;
-  color: white;
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv02", "cv03", "cv04";
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-.digest h1 { @apply text-3xl font-bold tracking-tight mb-6; }
-.digest h2 { @apply text-lg font-semibold mt-12 mb-4 text-white/90; }
-.digest p { @apply text-white/70 leading-relaxed mb-4; }
+/* — Typo : pas de lettre fantôme, titres optiques — */
+h1, h2, h3 { letter-spacing: -0.02em; }
+
+.font-mono { font-family: var(--font-mono); }
+
+/* ============================================================
+   COMPOSANTS
+   ============================================================ */
+
+/* — Carte : c'est un objet, elle répond au survol — */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color var(--dur-hover) var(--ease-out),
+              background-color var(--dur-hover) var(--ease-out),
+              transform var(--dur-card) var(--ease-out),
+              box-shadow var(--dur-card) var(--ease-out);
+}
+.card:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
+}
+
+/* — Carte principale : elle se soulève légèrement — */
+.card-hero {
+  box-shadow: var(--shadow-card);
+}
+.card-hero:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+}
+
+/* — Boutons : scale(0.97) au press, toujours — */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform var(--dur-press) var(--ease-out),
+              color var(--dur-hover) var(--ease-out),
+              background-color var(--dur-hover) var(--ease-out);
+}
+.btn:active { transform: scale(0.97); }
+
+/* — Ligne d'archive : discrète, répond au survol — */
+.row-archive {
+  transition: background-color var(--dur-hover) var(--ease-out),
+              transform var(--dur-hover) var(--ease-out);
+}
+.row-archive:hover {
+  background: var(--surface-hover);
+  transform: translateX(2px);
+}
+
+/* — Badges de fiabilité — */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.badge-ok    { color: var(--ok);    background: color-mix(in srgb, var(--ok) 12%, transparent);    border-color: color-mix(in srgb, var(--ok) 30%, transparent); }
+.badge-warn  { color: var(--warn);  background: color-mix(in srgb, var(--warn) 12%, transparent);  border-color: color-mix(in srgb, var(--warn) 30%, transparent); }
+.badge-rumor { color: var(--rumor); background: color-mix(in srgb, var(--rumor) 12%, transparent); border-color: color-mix(in srgb, var(--rumor) 30%, transparent); }
+
+/* ============================================================
+   MOTION — entrée en scène
+   ============================================================ */
+
+/* — Apparition page : pas de scale(0), on monte légèrement — */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.rise-in {
+  animation: rise-in var(--dur-page) var(--ease-out) both;
+}
+
+/* — Cascade : 30-80ms entre items, jamais tout-à-la-fois — */
+.stagger > * {
+  opacity: 0;
+  animation: rise-in var(--dur-card) var(--ease-out) both;
+}
+.stagger > *:nth-child(1) { animation-delay: 40ms; }
+.stagger > *:nth-child(2) { animation-delay: 90ms; }
+.stagger > *:nth-child(3) { animation-delay: 140ms; }
+.stagger > *:nth-child(4) { animation-delay: 190ms; }
+.stagger > *:nth-child(5) { animation-delay: 240ms; }
+.stagger > *:nth-child(6) { animation-delay: 290ms; }
+.stagger > *:nth-child(7) { animation-delay: 340ms; }
+.stagger > *:nth-child(8) { animation-delay: 390ms; }
+
+/* — Hover : réservé aux pointeurs précis (pas tactile) — */
+@media (hover: hover) and (pointer: fine) {
+  .card-hero:hover { transform: translateY(-2px); }
+  .row-archive:hover { transform: translateX(2px); }
+}
+
+/* — Accessibilité : on garde les transitions de couleur, on coupe le mouvement — */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   DIGEST (rendu markdown)
+   ============================================================ */
+
+.digest h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+}
+.digest h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+}
+.digest h2::before {
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background: var(--border-hover);
+}
+.digest h3 { font-size: 0.9375rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--fg-muted); }
+.digest p  { color: var(--fg-muted); line-height: 1.75; margin-bottom: 1rem; }
+.digest ul { list-style: none; padding: 0; margin-bottom: 1.5rem; display: grid; gap: 0.625rem; }
+.digest li { color: var(--fg-muted); line-height: 1.7; padding-left: 1.125rem; position: relative; }
+.digest li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.65em;
+  width: 4px; height: 4px;
+  border-radius: 999px;
+  background: var(--fg-faint);
+}
+.digest a {
+  color: var(--accent-fg);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  text-underline-offset: 2px;
+  transition: color var(--dur-hover) var(--ease-out);
+}
+.digest a:hover { color: white; }
+.digest strong { color: var(--fg); font-weight: 600; }
+.digest code  { font-family: var(--font-mono); font-size: 0.8125em; background: var(--surface); padding: 0.125rem 0.375rem; border-radius: 6px; }
+.digest blockquote { border-left: 2px solid var(--border-hover); padding-left: 1rem; color: var(--fg-subtle); font-style: italic; margin: 1rem 0; }
+.digest hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
