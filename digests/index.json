@@ -33,5 +33,10 @@
     "date": "2026-10-15",
     "headline": "SAB-070 AI Key + branche UniFi 11 + consentement explicite généralisé chez VoqadoWiFi",
     "count": 12
+  },
+  {
+    "date": "2026-10-16",
+    "headline": "TanStack Start XSS critique + Claude Code : RE hardware et faille de pinning",
+    "count": 7
   }
 ]
