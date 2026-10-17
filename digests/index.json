@@ -38,5 +38,10 @@
     "date": "2026-10-16",
     "headline": "TanStack Start XSS critique + Claude Code : RE hardware et faille de pinning",
     "count": 7
+  },
+  {
+    "date": "2026-10-17",
+    "headline": "Claude Agent SDK critique, code review Claude Code, iroh 1.0",
+    "count": 7
   }
 ]
