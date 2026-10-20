@@ -53,5 +53,10 @@
     "date": "2026-10-19",
     "headline": "Mesh VPN IPsec ranet3 + WhatsApp MCP pour agents + ASR multilingue basse-resource",
     "count": 8
+  },
+  {
+    "date": "2026-10-20",
+    "headline": "Deux advisories touchent l'écosystème de tes projets (requests, JWT) · Mistral sort Timest",
+    "count": 9
   }
 ]
