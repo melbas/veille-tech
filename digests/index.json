@@ -58,5 +58,10 @@
     "date": "2026-10-20",
     "headline": "Deux advisories touchent l'écosystème de tes projets (requests, JWT) · Mistral sort Timest",
     "count": 9
+  },
+  {
+    "date": "2026-10-21",
+    "headline": "Anti-bot vs agents IA touche les données d'audience ; eMudhra compromise ; DeepInfer",
+    "count": 9
   }
 ]
