@@ -63,5 +63,10 @@
     "date": "2026-10-21",
     "headline": "Anti-bot vs agents IA touche les données d'audience ; eMudhra compromise ; DeepInfer",
     "count": 9
+  },
+  {
+    "date": "2026-10-22",
+    "headline": "LiteLLM 1.107.0 compromis sur PyPI",
+    "count": 6
   }
 ]
