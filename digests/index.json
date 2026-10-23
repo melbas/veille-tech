@@ -68,5 +68,10 @@
     "date": "2026-10-22",
     "headline": "LiteLLM 1.107.0 compromis sur PyPI",
     "count": 6
+  },
+  {
+    "date": "2026-10-23",
+    "headline": "Pillow vulnérable confirmé en local + audit agents Cloudflare",
+    "count": 5
   }
 ]
