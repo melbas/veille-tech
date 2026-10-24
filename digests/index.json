@@ -73,5 +73,10 @@
     "date": "2026-10-23",
     "headline": "Pillow vulnérable confirmé en local + audit agents Cloudflare",
     "count": 5
+  },
+  {
+    "date": "2026-10-24",
+    "headline": "virtualenv : 9 advisories dont 2 high — Pillow toujours sans wheel corrigé",
+    "count": 6
   }
 ]
