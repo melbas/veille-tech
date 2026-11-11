@@ -78,5 +78,10 @@
     "date": "2026-10-24",
     "headline": "virtualenv : 9 advisories dont 2 high — Pillow toujours sans wheel corrigé",
     "count": 6
+  },
+  {
+    "date": "2026-11-11",
+    "headline": "Microsoft rejette les mails des petits hébergeurs — vérifier tes domaines Migadu",
+    "count": 10
   }
 ]
