@@ -93,5 +93,10 @@
     "date": "2026-11-13",
     "headline": "NVIDIA : Jensen Huang démissionne — Colette Kress intérim",
     "count": 11
+  },
+  {
+    "date": "2026-11-14",
+    "headline": "OpenCodeReview (Alibaba) : revue de code hybride déterministe + LLM, sans clé API en mode ",
+    "count": 7
   }
 ]
