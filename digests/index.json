@@ -108,5 +108,10 @@
     "date": "2026-11-16",
     "headline": "SkillEvaluator : NVIDIA outille l'évaluation des skills d'agents — applicable au protocole",
     "count": 6
+  },
+  {
+    "date": "2026-11-17",
+    "headline": "CVE-2026-99288 : DoS noyau Linux pré-auth ; lend — agents sans credentials",
+    "count": 10
   }
 ]
