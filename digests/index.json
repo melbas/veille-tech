@@ -113,5 +113,16 @@
     "date": "2026-11-17",
     "headline": "CVE-2026-99288 : DoS noyau Linux pré-auth ; lend — agents sans credentials",
     "count": 10
+  },
+  {
+    "date": "2026-11-17",
+    "headline": "Veille WiFi Sénégal / Cloudflare — agents sur portails captifs, ARTP/Starlink",
+    "count": 9,
+    "file": "2026-11-17-wifi-senegal-cloudflare.md"
+  },
+  {
+    "date": "2026-11-18",
+    "headline": "Java4Shell CVE-2026-114938 (CVSS 9.2), GPT-6.2, NVIDIA T3 : Vera Rubin NVL72 livre",
+    "count": 12
   }
 ]
