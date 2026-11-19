@@ -124,5 +124,10 @@
     "date": "2026-11-18",
     "headline": "Java4Shell CVE-2026-114938 (CVSS 9.2), GPT-6.2, NVIDIA T3 : Vera Rubin NVL72 livre",
     "count": 12
+  },
+  {
+    "date": "2026-11-19",
+    "headline": "nginx2root : 5 RCE pré-auth dans nginx, HTTP/2 suffit",
+    "count": 8
   }
 ]
