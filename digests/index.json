@@ -129,5 +129,10 @@
     "date": "2026-11-19",
     "headline": "nginx2root : 5 RCE pré-auth dans nginx, HTTP/2 suffit",
     "count": 8
+  },
+  {
+    "date": "2026-11-20",
+    "headline": "nginx2root : fix publié — patch 1.31.9 / 1.30.7 maintenant",
+    "count": 9
   }
 ]
