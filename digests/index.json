@@ -134,5 +134,10 @@
     "date": "2026-11-20",
     "headline": "nginx2root : fix publié — patch 1.31.9 / 1.30.7 maintenant",
     "count": 9
+  },
+  {
+    "date": "2026-11-21",
+    "headline": "Signal bloque les agents IA des OS mobiles · un LLM 27B réécrit ses propres poids",
+    "count": 5
   }
 ]
