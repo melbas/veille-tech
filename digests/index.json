@@ -139,5 +139,10 @@
     "date": "2026-11-21",
     "headline": "Signal bloque les agents IA des OS mobiles · un LLM 27B réécrit ses propres poids",
     "count": 5
+  },
+  {
+    "date": "2026-11-22",
+    "headline": "Ghostscript Upload2Shell : RCE via les pipelines d'upload d'images",
+    "count": 4
   }
 ]
