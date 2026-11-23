@@ -144,5 +144,10 @@
     "date": "2026-11-22",
     "headline": "Ghostscript Upload2Shell : RCE via les pipelines d'upload d'images",
     "count": 4
+  },
+  {
+    "date": "2026-11-23",
+    "headline": "Calculateur de liens radio mesh · fuite de prompts confirmée OpenRouter/MiniMax",
+    "count": 4
   }
 ]
