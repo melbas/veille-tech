@@ -154,5 +154,10 @@
     "date": "2026-11-24",
     "headline": "Shirudo (OpenAI+Cisco) : blinder un Linux non patché sans redémarrer",
     "count": 4
+  },
+  {
+    "date": "2026-11-25",
+    "headline": "Bonsai 2.5 27B : l'agent local 27B rattrape le full-precision",
+    "count": 10
   }
 ]
